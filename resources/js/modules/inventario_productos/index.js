@@ -2,7 +2,8 @@ import $ from "jquery";
 import Swal from 'sweetalert2'
 import 'datatables.net-dt';
 import 'datatables.net-responsive-dt';
-import 'datatables.net-searchbuilder-dt';
+
+
 const index = ( ) => {
 
     $('#table-listado-productos-inventario').dataTable({
