@@ -217,7 +217,7 @@
                                         </div>
                                         <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button id="btn-register-producto-inventario" type="submit" class="btn btn-primary">Registrar Producto</button>
+                                        <button id="btn-register-producto-inventario" type="submit" class="btn btn-primary">Actualizar Producto</button>
                                         </div>
                                     </form>
                                 </div>

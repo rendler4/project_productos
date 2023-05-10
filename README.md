@@ -12,6 +12,7 @@
 Consideraciones
 - Descargar el proyecto
 - Actualizar dependencias (composer update/npm install)
+- Registrarse en el sistema de autenticación para acceder al dashboard
 - Quitar example de archivo .env.example
 - Importar base de datos 
 - Levantar proyecto
