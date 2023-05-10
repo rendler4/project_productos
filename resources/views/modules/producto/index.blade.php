@@ -18,77 +18,77 @@
 
                 <div class="card">
                     <div class="card-header">
-                        {{-- <button id="btnPrueba">hyhy</button> --}}
-                                            <!-- Button trigger modal Registros-->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Registrar nuevo producto
-                    </button>
+                        <!-- Button trigger modal Registros-->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Registrar nuevo producto
+                        </button>
 
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-scrollable">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Registrar Nuevo Producto</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Registrar Nuevo Producto</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form id="form-create-producto-inventario">
+                                    <div class="modal-body">
+                                                <div class="mb-3 row">
+                                                    <label for="staticEmail" class="col-sm-3 col-form-label">Nombre</label>
+                                                    <div class="col-sm-9">
+                                                    <input type="text" class="form-control-plaintext" id="nombre" value="" name="nombre">
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-3 row">
+                                                    <label for="inputPassword" class="col-sm-3 col-form-label">Referencia</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" id="referencia" name="referencia">
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-3 row">
+                                                    <label for="inputPassword" class="col-sm-3 col-form-label">Precio</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="number" class="form-control" id="precio" name="precio">
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-3 row">
+                                                    <label for="inputPassword" class="col-sm-3 col-form-label">Peso</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="number" class="form-control" id="peso" name="peso">
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-3 row">
+                                                    <label for="inputPassword" class="col-sm-3 col-form-label">Categoria</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" id="categoria" name="categoria">
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-3 row">
+                                                    <label for="inputPassword" class="col-sm-3 col-form-label">Stock</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="number" class="form-control" id="stock" name="stock">
+                                                    </div>
+                                                </div>
+
+
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button id="btn-register-producto-inventario" type="submit" class="btn btn-primary">Registrar Producto</button>
+                                    </div>
+                                </form>
                             </div>
-                            <form id="form-create-producto-inventario">
-                                <div class="modal-body">
-                                            <div class="mb-3 row">
-                                                <label for="staticEmail" class="col-sm-3 col-form-label">Nombre</label>
-                                                <div class="col-sm-9">
-                                                <input type="text" class="form-control-plaintext" id="nombre" value="" name="nombre">
-                                                </div>
-                                            </div>
-
-                                            <div class="mb-3 row">
-                                                <label for="inputPassword" class="col-sm-3 col-form-label">Referencia</label>
-                                                <div class="col-sm-9">
-                                                    <input type="text" class="form-control" id="referencia" name="referencia">
-                                                </div>
-                                            </div>
-
-                                            <div class="mb-3 row">
-                                                <label for="inputPassword" class="col-sm-3 col-form-label">Precio</label>
-                                                <div class="col-sm-9">
-                                                    <input type="number" class="form-control" id="precio" name="precio">
-                                                </div>
-                                            </div>
-
-                                            <div class="mb-3 row">
-                                                <label for="inputPassword" class="col-sm-3 col-form-label">Peso</label>
-                                                <div class="col-sm-9">
-                                                    <input type="number" class="form-control" id="peso" name="peso">
-                                                </div>
-                                            </div>
-
-                                            <div class="mb-3 row">
-                                                <label for="inputPassword" class="col-sm-3 col-form-label">Categoria</label>
-                                                <div class="col-sm-9">
-                                                    <input type="text" class="form-control" id="categoria" name="categoria">
-                                                </div>
-                                            </div>
-
-                                            <div class="mb-3 row">
-                                                <label for="inputPassword" class="col-sm-3 col-form-label">Stock</label>
-                                                <div class="col-sm-9">
-                                                    <input type="number" class="form-control" id="stock" name="stock">
-                                                </div>
-                                            </div>
-
-
-
-
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button id="btn-register-producto-inventario" type="submit" class="btn btn-primary">Registrar Producto</button>
-                                </div>
-                            </form>
-                        </div>
+                            </div>
                         </div>
                     </div>
-                    </div>
+
                     <div class="card-body">
 
                         <table id="table-listado-productos-inventario" class="table text-center">
@@ -118,8 +118,18 @@
                                         <td>{{ $item->categoria }}</td>
                                         <td>{{ $item->stock }}</td>
                                         <td>{{ $item->created_at }}</td>
-                                        <td><input class="btn btn-info" type="button" value="edit"></td>
-                                        <td><input class="btn btn-danger" type="button" value="delete"></td>
+                                        <td><input class="btn btn-info btn-edit-product" type="button"
+                                            data-target-id-product="{{ $item->id }}"
+                                            data-target-nombre-product="{{ $item->nombre }}"
+                                            data-target-referencia-product="{{ $item->referencia }}"
+                                            data-target-precio-product="{{ $item->precio }}"
+                                            data-target-peso-product="{{ $item->peso }}"
+                                            data-target-categoria-product="{{ $item->categoria }}"
+                                            data-target-stock-product="{{ $item->stock }}"
+                                            value="edit"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#modalEdit"></td>
+                                        <td><input class="btn btn-danger btn-delete-product" type="button" data-target-id-product="{{ $item->id }}" value="delete" data-bs-toggle="modal" data-bs-target="#modalDelete"></td>
                                       </tr>
                                 @endforeach
                             </tbody>
@@ -140,7 +150,105 @@
         </div>
     </div>
 
+                            <!-- Modal -->
+                            <div class="modal fade" id="modalEdit" tabindex="-1" aria-labelledby="exampleModalEditLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="labelModalEditarProducto">Editar Datos de Producto ID:</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <form id="form-create-producto-inventario">
+                                        <div class="modal-body">
 
 
-</x-app-layout>
+                                                    <div class="mb-3 row" style="display: none">
+                                                        <label for="staticEmail" class="col-sm-3 col-form-label">ID</label>
+                                                        <div class="col-sm-9">
+                                                        <input type="text" class="form-control-plaintext" id="id_update_field" value="" disabled name="id">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="mb-3 row">
+                                                        <label for="staticEmail" class="col-sm-3 col-form-label">Nombre</label>
+                                                        <div class="col-sm-9">
+                                                        <input type="text" class="form-control-plaintext" id="nombre_update_field" value="" name="nombre">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="mb-3 row">
+                                                        <label for="inputPassword" class="col-sm-3 col-form-label">Referencia</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="referencia_update_field" name="referencia">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="mb-3 row">
+                                                        <label for="inputPassword" class="col-sm-3 col-form-label">Precio</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="number" class="form-control" id="precio_update_field" name="precio">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="mb-3 row">
+                                                        <label for="inputPassword" class="col-sm-3 col-form-label">Peso</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="number" class="form-control" id="peso_update_field" name="peso">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="mb-3 row">
+                                                        <label for="inputPassword" class="col-sm-3 col-form-label">Categoria</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="categoria_update_field" name="categoria">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="mb-3 row">
+                                                        <label for="inputPassword" class="col-sm-3 col-form-label">Stock</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="number" class="form-control" id="stock_update_field" name="stock">
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                        </div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button id="btn-register-producto-inventario" type="submit" class="btn btn-primary">Registrar Producto</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="modalDelete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">¿Está seguro que desea eliminar el siguiente producto?</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-danger">Eliminar</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                            </x-app-layout>
 

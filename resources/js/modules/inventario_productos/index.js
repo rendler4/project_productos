@@ -44,7 +44,6 @@ const index = ( ) => {
         .then((response)=>{
             console.log(response);
             if(response.success){
-
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
@@ -69,22 +68,25 @@ const index = ( ) => {
 
             }
         })
-
-        //alert('hola');
     });
 
-    /*lformElem.onsubmit = async (e) => {
-        e.preventDefault();
 
-        let response = await fetch('/article/formdata/post/user', {
-          method: 'POST',
-          body: new FormData(formElem)
-        });
+    $( ".btn-edit-product" ).on( "click", function(e) {
+            let input = $(this);
+            //document.getElementById('id_update_field').value = input.attr( 'data-target-id-product' );
+            document.getElementById('labelModalEditarProducto').innerText =  `Editar Datos de Producto ID: ${input.attr( 'data-target-id-product' )}`;
+            document.getElementById('nombre_update_field').value = input.attr( 'data-target-nombre-product' );
+            document.getElementById('referencia_update_field').value = input.attr( 'data-target-referencia-product' );
+            document.getElementById('precio_update_field').value = input.attr( 'data-target-precio-product' );
+            document.getElementById('peso_update_field').value = input.attr( 'data-target-peso-product' );
+            document.getElementById('categoria_update_field').value =  input.attr( 'data-target-categoria-product' );
+            document.getElementById('stock_update_field').value = input.attr( 'data-target-stock-product' );
+    } );
 
-        let result = await response.json();
+    $( ".btn-delete-product" ).on( "click", function(e) {
+        alert( "Handler for `click` called. delete" );
+    } );
 
-        alert(result.message);
-      };*/
 
  }
 
