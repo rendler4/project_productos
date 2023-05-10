@@ -11,4 +11,14 @@ class Producto extends Model
     //protected $primaryKey = 'cod_evento';
     //public $timestamps = false;
     use HasFactory;
+
+    protected $fillable = [
+        "nombre",
+        "referencia",
+        "precio",
+        "peso",
+        "categoria",
+        "stock",
+    ];
+
 }

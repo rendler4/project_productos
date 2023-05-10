@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Productos;
 
 use App\Http\Controllers\Controller;
 use App\Models\Producto;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Throwable;
 
 class ProductoController extends Controller
 {
@@ -32,8 +35,44 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         //
-        dd($request->all());
-        return response()->json([$request]);
+        $response = response();
+        $rules = [
+            'nombre' => 'required',
+            'referencia' => 'required',
+            'precio' => 'required',
+            'peso' => 'required',
+            'categoria' => 'required',
+            'stock' => 'required',
+        ];
+        $messages = [
+            'nombre.required' => 'We need to know your email address!',
+            'referencia.required' => 'referencia required',
+            'precio.required' => 'precio required',
+            'peso.required' => 'peso required',
+            'categoria.required' => 'categoria required',
+            'stock.required' => 'stock required',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            //dd('fail', $validator->errors());
+            $res = $validator->errors();
+            $response = response()->json(['success'=>false,'message'=>$res[0]]);
+        }else{
+            //dd('no fail');
+
+            try{
+                Producto::create(request()->all());
+                $response = response()->json(['success'=>true,'message'=>'Producto registrado correctamente']);
+            }catch (QueryException $queryException) {
+                $response = response()->json(['success'=>false,'message'=>$queryException->getMessage()]);
+            }catch (Throwable $exception) {
+                $response = response()->json(['success'=>false,'message'=>$exception->getMessage()]);
+            }
+
+        }
+        return $response;
     }
 
     /**

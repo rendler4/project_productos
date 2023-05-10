@@ -44,7 +44,7 @@
                                             <div class="mb-3 row">
                                                 <label for="inputPassword" class="col-sm-3 col-form-label">Referencia</label>
                                                 <div class="col-sm-9">
-                                                    <input type="password" class="form-control" id="referencia" name="referencia">
+                                                    <input type="text" class="form-control" id="referencia" name="referencia">
                                                 </div>
                                             </div>
 
@@ -58,21 +58,21 @@
                                             <div class="mb-3 row">
                                                 <label for="inputPassword" class="col-sm-3 col-form-label">Peso</label>
                                                 <div class="col-sm-9">
-                                                    <input type="password" class="form-control" id="peso" name="peso">
+                                                    <input type="number" class="form-control" id="peso" name="peso">
                                                 </div>
                                             </div>
 
                                             <div class="mb-3 row">
                                                 <label for="inputPassword" class="col-sm-3 col-form-label">Categoria</label>
                                                 <div class="col-sm-9">
-                                                    <input type="password" class="form-control" id="categoria" name="categoria">
+                                                    <input type="text" class="form-control" id="categoria" name="categoria">
                                                 </div>
                                             </div>
 
                                             <div class="mb-3 row">
                                                 <label for="inputPassword" class="col-sm-3 col-form-label">Stock</label>
                                                 <div class="col-sm-9">
-                                                    <input type="password" class="form-control" id="stock" name="stock">
+                                                    <input type="number" class="form-control" id="stock" name="stock">
                                                 </div>
                                             </div>
 

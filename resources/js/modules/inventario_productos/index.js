@@ -4,7 +4,6 @@ const index = ( ) => {
 
     document.querySelector('#form-create-producto-inventario').addEventListener('submit', (e) => {
         e.preventDefault();
-        console.log(dataString);
         fetch('./productos', {
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -15,6 +14,11 @@ const index = ( ) => {
         .then((response)=>response.json())
         .then((response)=>{
             console.log(response);
+            if(response.success){
+
+            }else{
+
+            }
         })
 
         alert('hola');
