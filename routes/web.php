@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Productos\ProductoController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Resumen\ResumenVentasController;
+use App\Http\Controllers\Ventas\VentaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +31,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     //Route prouductos
     Route::resource('productos', ProductoController::class);
+    Route::resource('ventas', VentaController::class);
+    Route::resource('resumen_ventas', ResumenVentasController::class);
 });
 
 require __DIR__.'/auth.php';

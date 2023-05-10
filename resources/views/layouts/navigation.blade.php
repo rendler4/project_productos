@@ -18,9 +18,12 @@
                     <x-nav-link :href="route('productos.index')" :active="request()->routeIs('productos')">
                         {{ __('Inventario de Productos') }}
                     </x-nav-link>
-                    {{-- <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('ventas.index')" :active="request()->routeIs('ventas')">
                         {{ __('Venta de Productos') }}
-                    </x-nav-link> --}}
+                    </x-nav-link>
+                    <x-nav-link :href="route('resumen_ventas.index')" :active="request()->routeIs('resumen_ventas')">
+                        {{ __('Resumen de Ventas') }}
+                    </x-nav-link>
                 </div>
             </div>
 
