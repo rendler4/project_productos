@@ -65,7 +65,6 @@ class ProductoController extends Controller
 
         }else{
             //dd('no fail');
-
             try{
                 Producto::create(request()->all());
                 $response = response()->json(['success'=>true,'message'=>'Producto registrado correctamente']);
@@ -101,6 +100,57 @@ class ProductoController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        //dd($request->all(), $id);
+        $response = response();
+        $rules = [
+            'nombre' => 'required',
+            'referencia' => 'required',
+            'precio' => 'required',
+            'peso' => 'required',
+            'categoria' => 'required',
+            'stock' => 'required',
+        ];
+        $messages = [
+            'nombre.required' => 'Requieres el nombre para actualizar!',
+            'referencia.required' => 'referencia required',
+            'precio.required' => 'precio required',
+            'peso.required' => 'peso required',
+            'categoria.required' => 'categoria required',
+            'stock.required' => 'stock required',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            //dd('fail', $validator->errors());
+            $errors = $validator->errors();
+            foreach ($errors->all() as $message) {
+                // ...
+                return response()->json(['success'=>false,'message'=>$message]);
+            }
+
+        }else{
+            //dd('no fail');
+            try{
+                //Producto::create(request()->all());
+                $producto = Producto::where('id', $id)->delete();
+                $producto->nombre = $request->nombre;
+                $producto->referencia = $request->referencia;
+                $producto->precio = $request->precio;
+                $producto->peso = $request->peso;
+                $producto->categoria = $request->categoria;
+                $producto->stock = $request->stock;
+                $producto->save();
+
+                $response = response()->json(['success'=>true,'message'=>'Producto registrado correctamente']);
+            }catch (QueryException $queryException) {
+                $response = response()->json(['success'=>false,'message'=>$queryException->getMessage()]);
+            }catch (Throwable $exception) {
+                $response = response()->json(['success'=>false,'message'=>$exception->getMessage()]);
+            }
+
+        }
+        return $response;
     }
 
     /**

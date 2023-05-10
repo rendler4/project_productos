@@ -60,7 +60,7 @@ class VentaController extends Controller
                     return response()->json(['success'=>false,'message'=>'Stock insuficiente para realizar la venta, actuamente contamos con '.$stockActual.' Exis.']);
                 }else{
                     $producto->stock = ($stockActual-$request->cantidad);
-                    $producto->update();
+                    $producto->save();
                     return response()->json(['success'=>true,'message'=>'Venta realizada correctamente']);
                 }
             }catch (QueryException $queryException) {

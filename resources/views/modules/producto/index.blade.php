@@ -158,7 +158,7 @@
                                     <h1 class="modal-title fs-5" id="labelModalEditarProducto">Editar Datos de Producto ID:</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <form id="form-create-producto-inventario">
+                                    <form id="form-update-producto-inventario">
                                         <div class="modal-body">
 
 

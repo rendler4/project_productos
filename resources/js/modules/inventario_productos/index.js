@@ -83,6 +83,51 @@ const index = ( ) => {
             document.getElementById('stock_update_field').value = input.attr( 'data-target-stock-product' );
     } );
 
+
+    document.querySelector('#form-update-producto-inventario').addEventListener('submit', (e) => {
+        e.preventDefault();
+        ///user-settings/{{ $user_settings->id }}
+        fetch('./productos/{4}', {
+        //fetch('./productos/4', {
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            method: 'PATCH',
+            body: new FormData(e.target),
+        })
+        .then((response)=>response.json())
+        .then((response)=>{
+            console.log(response);
+            if(response.success){
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: response.message,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+
+                setTimeout(()=>{
+                    window.location.href = './productos';
+                }, 1000);
+
+            }else{
+
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: response.message,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+
+            }
+        })
+
+    });
+
+
+
     $( ".btn-delete-product" ).on( "click", function(e) {
         //alert( "Handler for `click` called. delete" );
         //alert($(this).attr( 'data-target-id-product' ));
