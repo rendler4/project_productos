@@ -33,6 +33,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('productos', ProductoController::class);
     Route::resource('ventas', VentaController::class);
     Route::resource('resumen_ventas', ResumenVentasController::class);
+    Route::post('/data_producto_mayor_stock', [ProductoController::class, 'data_producto_mayor_stock']);
+    Route::post('/data_producto_mayor_venta', [ProductoController::class, 'data_producto_mayor_venta']);
+
 });
 
 require __DIR__.'/auth.php';

@@ -4,3 +4,10 @@
 .btn-primary{
     background-color: blue;
 }
+.btn-info{
+    background-color: #25cff2;
+}
+.btn-danger{
+    background-color: red;
+}
+

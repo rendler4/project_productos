@@ -123,4 +123,29 @@ class ProductoController extends Controller
         }
         return $response;
     }
+
+
+    public function data_producto_mayor_stock()
+    {
+        //
+        $mayor = Producto::query()->selectRaw('MAX(stock)')->get();
+        $producto = Producto::query()
+                    ->select('id','nombre')
+                    ->where('stock', $mayor[0]['MAX(stock)'])
+                    ->take(1)
+                    ->get();
+
+        return response()->json(['success'=>true, 'data'=>$producto]);
+    }
+
+
+    public function data_producto_mayor_venta()
+    {
+        //
+        //$ventas = Ventas::all();
+        //return view('modules.producto.index')->with(['productos'=>$ventas]);
+        return response()->json(['success'=>true, 'data'=>'']);
+    }
+
+
 }
