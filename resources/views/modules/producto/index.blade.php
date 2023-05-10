@@ -32,59 +32,59 @@
                             <h1 class="modal-title fs-5" id="exampleModalLabel">Registrar Nuevo Producto</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
-
-                                    <form id="form-create-producto-inventario">
-                                        <div class="mb-3 row">
-                                            <label for="staticEmail" class="col-sm-3 col-form-label">Nombre</label>
-                                            <div class="col-sm-9">
-                                            <input type="text" class="form-control-plaintext" id="staticEmail" value="">
+                            <form id="form-create-producto-inventario">
+                                <div class="modal-body">
+                                            <div class="mb-3 row">
+                                                <label for="staticEmail" class="col-sm-3 col-form-label">Nombre</label>
+                                                <div class="col-sm-9">
+                                                <input type="text" class="form-control-plaintext" id="nombre" value="" name="nombre">
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="mb-3 row">
-                                            <label for="inputPassword" class="col-sm-3 col-form-label">Referencia</label>
-                                            <div class="col-sm-9">
-                                                <input type="password" class="form-control" id="inputPassword">
+                                            <div class="mb-3 row">
+                                                <label for="inputPassword" class="col-sm-3 col-form-label">Referencia</label>
+                                                <div class="col-sm-9">
+                                                    <input type="password" class="form-control" id="referencia" name="referencia">
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="mb-3 row">
-                                            <label for="inputPassword" class="col-sm-3 col-form-label">Precio</label>
-                                            <div class="col-sm-9">
-                                                <input type="password" class="form-control" id="inputPassword">
+                                            <div class="mb-3 row">
+                                                <label for="inputPassword" class="col-sm-3 col-form-label">Precio</label>
+                                                <div class="col-sm-9">
+                                                    <input type="number" class="form-control" id="precio" name="precio">
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="mb-3 row">
-                                            <label for="inputPassword" class="col-sm-3 col-form-label">Precio</label>
-                                            <div class="col-sm-9">
-                                                <input type="password" class="form-control" id="inputPassword">
+                                            <div class="mb-3 row">
+                                                <label for="inputPassword" class="col-sm-3 col-form-label">Peso</label>
+                                                <div class="col-sm-9">
+                                                    <input type="password" class="form-control" id="peso" name="peso">
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="mb-3 row">
-                                            <label for="inputPassword" class="col-sm-3 col-form-label">Categoria</label>
-                                            <div class="col-sm-9">
-                                                <input type="password" class="form-control" id="inputPassword">
+                                            <div class="mb-3 row">
+                                                <label for="inputPassword" class="col-sm-3 col-form-label">Categoria</label>
+                                                <div class="col-sm-9">
+                                                    <input type="password" class="form-control" id="categoria" name="categoria">
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="mb-3 row">
-                                            <label for="inputPassword" class="col-sm-3 col-form-label">Stock</label>
-                                            <div class="col-sm-9">
-                                                <input type="password" class="form-control" id="inputPassword">
+                                            <div class="mb-3 row">
+                                                <label for="inputPassword" class="col-sm-3 col-form-label">Stock</label>
+                                                <div class="col-sm-9">
+                                                    <input type="password" class="form-control" id="stock" name="stock">
+                                                </div>
                                             </div>
-                                        </div>
-                                    </form>
 
 
 
-                            </div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Registrar Producto</button>
-                            </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button id="btn-register-producto-inventario" type="submit" class="btn btn-primary">Registrar Producto</button>
+                                </div>
+                            </form>
                         </div>
                         </div>
                     </div>
