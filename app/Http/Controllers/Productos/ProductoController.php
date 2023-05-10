@@ -13,7 +13,8 @@ class ProductoController extends Controller
     public function index()
     {
         //
-        return view('modules.producto.index');
+        $productos = [];
+        return view('modules.producto.index')->with(['productos'=>$productos]);
     }
 
     /**
