@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Productos;
 
 use App\Http\Controllers\Controller;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 
 class ProductoController extends Controller
@@ -13,7 +14,7 @@ class ProductoController extends Controller
     public function index()
     {
         //
-        $productos = [];
+        $productos = Producto::all();
         return view('modules.producto.index')->with(['productos'=>$productos]);
     }
 
