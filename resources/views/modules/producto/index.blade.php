@@ -233,15 +233,24 @@
                                     <h1 class="modal-title fs-5" id="staticBackdropLabel">¿Está seguro que desea eliminar el siguiente producto?</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <div class="modal-body">
+
+                                        <div class="modal-body">
+
+                                            <div class="mb-3 row">
+                                                <label for="inputPassword" class="col-sm-3 col-form-label">ID</label>
+                                                <div class="col-sm-9">
+                                                    <input type="number" class="form-control" id="id_delete_field" name="stock">
+                                                </div>
+                                            </div>
 
 
+                                        </div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button id="btn-confirm-delete-producto" type="button" class="btn btn-danger">Eliminar</button>
+                                        </div>
 
-                                    </div>
-                                    <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-danger">Eliminar</button>
-                                    </div>
+
                                 </div>
                                 </div>
                             </div>

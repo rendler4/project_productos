@@ -109,5 +109,18 @@ class ProductoController extends Controller
     public function destroy(string $id)
     {
         //
+        //dd($id);
+        $response = response();
+        try{
+
+            Producto::where('id', $id)->delete();
+            $response = response()->json(['success'=>true,'message'=>'Producto eliminado correctamente']);
+
+        }catch (QueryException $queryException) {
+            $response = response()->json(['success'=>false,'message'=>$queryException->getMessage()]);
+        }catch (Throwable $exception) {
+            $response = response()->json(['success'=>false,'message'=>$exception->getMessage()]);
+        }
+        return $response;
     }
 }

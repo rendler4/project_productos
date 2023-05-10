@@ -84,8 +84,51 @@ const index = ( ) => {
     } );
 
     $( ".btn-delete-product" ).on( "click", function(e) {
-        alert( "Handler for `click` called. delete" );
-    } );
+        //alert( "Handler for `click` called. delete" );
+        //alert($(this).attr( 'data-target-id-product' ));
+        document.getElementById('id_delete_field').value =  $(this).attr( 'data-target-id-product' );
+        document.querySelector('#btn-confirm-delete-producto').setAttribute('data-target-id-product', $(this).attr( 'data-target-id-product' ));
+    });
+
+
+
+    document.querySelector('#btn-confirm-delete-producto').addEventListener('click', (e) => {
+        e.preventDefault();
+        fetch('./productos/'+e.target.dataset.targetIdProduct   , {
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            method: 'DELETE',
+        })
+        .then((response)=>response.json())
+        .then((response)=>{
+            console.log(response);
+            if(response.success){
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: response.message,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+
+                setTimeout(()=>{
+                    window.location.href = './productos';
+                }, 1000);
+
+            }else{
+
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: response.message,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+
+            }
+        })
+    });
 
 
  }
