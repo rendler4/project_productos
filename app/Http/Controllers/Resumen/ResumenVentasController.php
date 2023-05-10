@@ -13,6 +13,7 @@ class ResumenVentasController extends Controller
     public function index()
     {
         //
+        return view('modules.resumen.ventas.index')->with([]);
     }
 
     /**
