@@ -57,8 +57,12 @@ class ProductoController extends Controller
 
         if ($validator->fails()) {
             //dd('fail', $validator->errors());
-            $res = $validator->errors();
-            $response = response()->json(['success'=>false,'message'=>$res[0]]);
+            $errors = $validator->errors();
+            foreach ($errors->all() as $message) {
+                // ...
+                return response()->json(['success'=>false,'message'=>$message]);
+            }
+
         }else{
             //dd('no fail');
 
